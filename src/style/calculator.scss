@@ -1,0 +1,198 @@
+@import "./vars";
+
+
+.btn {
+  position: relative;
+  margin: map-get($margin, elements_form);
+  font-weight: bold;
+  color: map-get($color, white);
+  cursor: pointer;
+  background-color: map-get($color, blue_dark);
+  border: 0;
+  -webkit-border-radius: map-get($border, buttom);
+  -moz-border-radius: map-get($border, buttom);
+  border-radius: map-get($border, buttom);
+
+  .exponent {
+    position: absolute;
+    right: 15%;
+    top: 10%;
+    font-size: 1.5rem;
+  }
+
+  &:focus {
+    outline: 0;
+    -webkit-box-shadow: 0px 0px 5px 0px map-get($color, blue_dark);
+    -moz-box-shadow: 0px 0px 5px 0px map-get($color, blue_dark);
+    box-shadow: 0px 0px 5px 0px map-get($color, blue_dark);
+  }
+}
+
+
+.form {
+  margin: 30px 0;
+
+  input {
+    width: 60%;
+    padding: 10px;
+    margin: map-get($margin, elements_form) 0;
+    font-size: 1.5rem;
+    -webkit-border-radius: map-get($border, radius);
+    -moz-border-radius: map-get($border, radius);
+    border-radius: map-get($border, radius);
+    border: 5px solid map-get($color, blue);
+
+    &:focus {
+      outline: 0;
+      -webkit-box-shadow: 0px 0px 10px 0px map-get($color, blue);
+      -moz-box-shadow: 0px 0px 10px 0px map-get($color, blue);
+      box-shadow: 0px 0px 10px 0px map-get($color, blue);
+    }
+
+  }
+
+  .separator {
+    height: 8px;
+    width: 70%;
+    margin: map-get($margin, elements_form) auto;
+    background-color: map-get($color, blue);
+  }
+
+  .btn {
+    height: 90px;
+    width: 90px;
+    font-size: 4rem;
+    font-weight: bold;
+  }
+
+  .history {
+    width: 70%;
+    margin: auto;
+
+    .btn {
+      width: auto;
+      height: auto;
+      padding: 15px 40px;
+      font-size: 2rem;
+    }
+  }
+}
+
+.error {
+  position: fixed;
+  top: 0;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, .5);
+  color: map-get($color, black);
+  -webkit-border-radius: map-get($border, buttom);;
+  -moz-border-radius: map-get($border, buttom);;
+  border-radius: map-get($border, buttom);
+
+  .modal {
+    position: fixed;
+    height: 390px;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    background-color: #FFFFFF;
+    -webkit-border-radius: map-get($border, buttom);
+    -moz-border-radius: map-get($border, buttom);
+    border-radius: map-get($border, buttom);
+
+    &.start {
+      align-items: flex-start;
+    }
+
+    &.center {
+      align-items: center;
+    }
+
+    .message {
+      width: 100%;
+      padding: 20px;
+
+      .header {
+        padding: 10px;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+
+        li {
+          width: 33%;
+          display: inline-block;
+          font-weight: bold;
+        }
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+
+        &.content-history {
+          height: 300px;
+          overflow-y: scroll;
+        }
+
+        .item-history {
+          padding: 10px;
+          margin: 5px;
+          display: flex;
+          justify-content: space-between;
+          -webkit-border-radius: map-get($border, buttom);
+          -moz-border-radius: map-get($border, buttom);
+          border-bottom: 2px solid #0077d5;
+          &:hover {
+            -webkit-box-shadow: 0 2px 2px 0 rgba(0, 119, 213, 0.51), 0 3px 1px -2px rgba(0, 119, 213, 0.5), 0 1px 5px 0 rgba(0, 150, 245, 0.61);
+            box-shadow: 0 2px 2px 0 rgba(0, 119, 213, 0.5), 0 3px 1px -2px rgba(0, 119, 213, 0.51), 0 1px 5px 0 rgba(0, 150, 245, 0.56);
+          }
+
+          span {
+            width: 33%;
+          }
+        }
+      }
+
+      .message-error {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .btn {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    right: -30px;
+    top: -30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: map-get($color, white);
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  }
+}
+
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.14);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background-color: var(--primary);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.77);
+}
